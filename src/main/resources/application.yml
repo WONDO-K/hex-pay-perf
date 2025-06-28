@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: hexpay-perf
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/hexpay?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: your-password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update # ?? ??: create | update | validate
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+  cache:
+    type: caffeine # Spring Cache ?? ? Caffeine ??
+
+logging:
+  level:
+    root: INFO
+    com.example.hexpay: DEBUG
+  file:
+    name: logs/hexpay.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+server:
+  port: 8080
