@@ -4,8 +4,8 @@ spring:
 
   datasource:
     url: jdbc:mysql://localhost:3306/hexpay?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: root
-    password: your-password
+    username: hexuser         # ✅ docker-compose.yml 에서 설정한 사용자명으로 변경
+    password: 1234         # ✅ docker-compose.yml 에 맞춰 변경
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
