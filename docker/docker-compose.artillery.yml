@@ -6,7 +6,7 @@ services:
       context: ./docker/artillery
     container_name: artillery-runner # 컨테이너 이름 지정
     volumes:
-      - ./load-tests:/app/load-tests # 현재 경로의 load-tests 폴더를 컨테이너에 마운트
+      - ../load-tests:/app/load-tests # 현재 경로의 load-tests 폴더를 컨테이너에 마운트
     working_dir: /app/load-tests # 컨테이너 내에서 작업 디렉토리 설정
     entrypoint: ["/bin/sh", "-c", "artillery run load-test.yml --output result.json && artillery report result.json --output result.html"]
     #entrypoint: ["artillery", "run", "load-test.yml"] # 컨테이너 시작 시 실행할 명령어 (Artillery 테스트 실행)
