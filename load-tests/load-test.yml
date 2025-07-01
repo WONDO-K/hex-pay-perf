@@ -1,0 +1,16 @@
+config:
+  target: "http://host.docker.internal:8080"  # 로컬에 띄운 Spring Boot 서버 접근용 도커 호스트 주소
+  phases:
+    - duration: 60       #️ 60초 동안
+      arrivalRate: 10    # 초당 10명의 유저 시뮬레이션 (즉, TPS 10)
+
+scenarios:
+  - name: Prepare payment test
+    flow:
+      - post:
+          url: "/payments/prepare"
+          json:
+            orderId: 1001                          # 고정 ID 사용
+            # orderId: "{{ $randomInt(1, 9999) }}" # TPS 테스트 전환용 랜덤값
+            currency: "USD"
+            amount: 100.00

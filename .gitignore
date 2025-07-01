@@ -1,24 +1,12 @@
-HELP.md
-.gradle
+# Gradle build
+.gradle/
 build/
+
+# Gradle wrapper jar (keep)
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### IntelliJ IDEA ###
-.idea
+# IntelliJ IDEA
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -26,12 +14,52 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-### NetBeans ###
+# Eclipse & STS
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# VSCode
+.vscode/
+
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 
-### VS Code ###
-.vscode/
+# Log files
+logs/
+*.log
+
+# Local configuration
+*.env
+.env*
+
+# Artillery test results
+# 포함하지 않을 임시 리포트
+load-tests/result.*
+load-tests/*.csv
+
+# 보고서 디렉토리는 포함
+!load-tests/reports/
+
+# Docker artifacts
+docker/mysql_data/
+docker/volumes/
+*.pid
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Help file
+HELP.md
